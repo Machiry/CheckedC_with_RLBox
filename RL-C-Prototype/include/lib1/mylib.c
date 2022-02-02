@@ -1,5 +1,6 @@
 #include "mylib.h"
 #include "../../mylibheader.hpp"
+#include "../../main.cpp"
 #include <signal.h>
 #include <stdio.h>
 
@@ -28,7 +29,7 @@ int main()
 	int b = 20;
 	int result = 100;
 	printf(" result is %d\n", result);
-	invoked_unchecked_function(f1, &a, &b, &result);
+	invoked_unchecked_function(_unsafe_add, a,b, result);
 	printf(" result is %d", result);
 	return 0;
 }

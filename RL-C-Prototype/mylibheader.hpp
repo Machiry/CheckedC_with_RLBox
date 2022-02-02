@@ -5,7 +5,10 @@ extern "C" {
 #endif
    /* This is the interface for Checked-C library to access the unchecked library code 
     */
-    int invoked_unchecked_function(char* func_name, int* a, int*b, int* result);
+#define invoked_unchecked_function(func_name, a, b, result)\
+{\
+	execute_unchecked_function(_unsafe_add,a,b,result);\
+}\
 
     //THIS .H FILE INTERFACES THE API'S OF ALL LIBRARIES UNDER USE
     //THIS WILL NOT USE CHECKEDC AND THEREBY, UNCONVERTED C 
